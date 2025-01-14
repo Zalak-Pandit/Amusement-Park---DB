@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Ticket</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Purchase Ticket</h1>
+    <form method="POST" action="/purchase_ticket">
+        <label for="visitor_id">Visitor ID:</label>
+        <input type="number" id="visitor_id" name="visitor_id" required><br><br>
+
+        <label for="purchase_date">Purchase Date:</label>
+        <input type="date" id="purchase_date" name="purchase_date" required><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br><br>
+
+        <label for="ticket_type">Ticket Type:</label>
+        <select id="ticket_type" name="ticket_type">
+            <option value="Single-Day">Single-Day</option>
+            <option value="Season Pass">Season Pass</option>
+        </select><br><br>
+
+        <button type="submit">Purchase Ticket</button>
+    </form>
+</body>
+</html>

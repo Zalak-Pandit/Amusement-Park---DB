@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Ticket History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Visitor Ticket History</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Visitor Name</th>
+                <th>Ticket ID</th>
+                <th>Purchase Date</th>
+                <th>Price</th>
+                <th>Ticket Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket['VisitorName'] }}</td>
+                <td>{{ ticket['TicketID'] }}</td>
+                <td>{{ ticket['PurchaseDate'] }}</td>
+                <td>{{ ticket['Price'] }}</td>
+                <td>{{ ticket['TicketType'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

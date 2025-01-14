@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Rides</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Available Rides</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Ride ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Capacity</th>
+                <th>Operating Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ride in rides %}
+            <tr>
+                <td>{{ ride['RideID'] }}</td>
+                <td>{{ ride['Name'] }}</td>
+                <td>{{ ride['Type'] }}</td>
+                <td>{{ ride['Capacity'] }}</td>
+                <td>{{ ride['OperatingStatus'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
